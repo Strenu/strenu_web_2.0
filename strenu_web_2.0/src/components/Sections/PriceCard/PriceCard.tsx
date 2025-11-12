@@ -14,6 +14,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ plan, price, period, features, is
     const cardClass = isRecommended ? styles.cardRecommended : styles.card;
     const buttonClass = isRecommended ? styles.buttonAccent : styles.buttonDefault;
     const buttonText = isRecommended ? 'Comenzar (Recomendado)' : 'Seleccionar Plan';
+    const displayFeatures = features ?? [];
 
     return (
         <div className={cardClass}>
@@ -27,7 +28,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ plan, price, period, features, is
             </div>
 
             <ul className={styles.featureList}>
-                {features.map((feature, index) => (
+                {displayFeatures.map((feature, index) => (
                     <li key={index} className={styles.featureItem}>
                         <span className={styles.featureIcon}>✔</span>
                         {feature}
