@@ -1,0 +1,136 @@
+/* src/components/Sections/Pricing.module.css */
+/* Usamos las variables definidas en src/index.css */
+
+.section {
+    max-width: 1280px;
+    margin: 6rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+}
+
+.subheading {
+    font-size: 1.15rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 4rem;
+}
+
+/* --- Cuadrícula de Precios --- */
+.cardGrid {
+    display: grid;
+    /* 3 columnas */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+/* --- Tarjeta de Precio Base --- */
+.card {
+    background-color: var(--color-surface-dark); 
+    padding: 2.5rem;
+    border-radius: 12px;
+    
+    /* Sombra para elevación */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6); 
+    border: 1px solid transparent; /* Base para el borde de acento */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Pequeña elevación al pasar el ratón */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+}
+
+/* --- Estilo para el plan RECOMENDADO --- */
+.cardRecommended {
+    composes: card; /* Hereda todos los estilos de .card */
+    border: 2px solid var(--color-accent-primary); /* Borde acentuado */
+    transform: scale(1.02); /* Ligeramente más grande */
+}
+
+.cardRecommended:hover {
+    transform: translateY(-5px) scale(1.02); 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 15px var(--color-accent-primary); /* Brillo de acento */
+}
+
+.planName {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+}
+
+.priceDisplay {
+    margin-bottom: 2rem;
+}
+
+.priceValue {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    line-height: 1;
+}
+
+.pricePeriod {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+}
+
+.featureList {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.featureItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+}
+
+.featureIcon {
+    color: var(--color-accent-primary); /* Icono de check en color acento */
+    font-weight: bold;
+}
+
+/* --- Botón --- */
+.button {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buttonDefault {
+    composes: button;
+    background-color: var(--color-surface-dark);
+    color: var(--color-text-primary);
+    border-color: var(--color-border-subtle);
+}
+
+.buttonDefault:hover {
+    background-color: var(--color-border-subtle);
+}
+
+/* Botón de acento para el plan recomendado */
+.buttonAccent {
+    composes: button;
+    background-color: var(--color-accent-primary);
+    color: var(--color-background-base); /* Texto oscuro sobre el acento claro */
+}
+
+.buttonAccent:hover {
+    background-color: var(--color-accent-hover);
+}

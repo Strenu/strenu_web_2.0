@@ -1,0 +1,92 @@
+/* Usamos las variables definidas en src/index.css */
+
+.hero {
+    position: relative; /* Contenedor para posicionar las capas */
+    width: 100%;
+    /* Altura: Ocupa toda la altura de la ventana visible (viewport) */
+    height: 100vh; 
+    overflow: hidden; /* Asegura que el video no se desborde */
+    
+    /* Centrar el contenido de la Hero Section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- CAPA 1: Video de Fondo --- */
+.backgroundVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    
+    /* Asegura que el video cubra todo el contenedor */
+    object-fit: cover; 
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    /* EFECTO CLAVE: Difuminado para que el texto resalte */
+    filter: blur(4px) brightness(0.9); /* Blur para abstracción y brillo para oscuridad */
+}
+
+/* --- CAPA 2: Overlay Oscuro (para legibilidad) --- */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    
+    /* Color de fondo semi-transparente oscuro */
+    background: rgba(0, 0, 0, 0.4); 
+    /* Degradado sutil para asegurar que el centro es más oscuro */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+/* --- CAPA 3: Contenido de Texto y Botones --- */
+.content {
+    position: relative;
+    z-index: 3; /* Asegura que esté por encima del video y el overlay */
+    max-width: 800px;
+    padding: 0 1.5rem;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    color: var(--color-text-primary);
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    color: var(--color-text-secondary); /* Un poco más sutil que el título */
+}
+
+/* --- Estilo del Botón de Acento (Marrón Tierra/Piedra Caliza) --- */
+.primaryButton {
+    /* Color de acento */
+    background-color: var(--color-accent-primary); 
+    color: var(--color-background-base); /* Texto oscuro sobre el botón claro */
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    /* Sombra sutil para darle elevación */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.primaryButton:hover {
+    /* Efecto hover con el color de acento más claro */
+    background-color: var(--color-accent-hover); 
+}

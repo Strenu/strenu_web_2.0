@@ -1,0 +1,57 @@
+/* src/components/Sections/CTA.module.css */
+/* Usamos las variables definidas en src/index.css */
+
+.section {
+    max-width: 1280px;
+    margin: 6rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.ctaBox {
+    /* Usamos el color de superficie más oscuro para crear un bloque bien definido */
+    background-color: var(--color-surface-dark); 
+    padding: 4rem 2rem;
+    border-radius: 12px;
+    
+    /* Sombra para una gran elevación */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); 
+}
+
+.title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* --- Botón de Acento (Marrón Tierra) --- */
+.button {
+    /* Color de acento */
+    background-color: var(--color-accent-primary); 
+    color: var(--color-background-base); /* Texto oscuro sobre el botón claro */
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block; /* Para que el 'a' se comporte como botón */
+    transition: background-color 0.3s ease, transform 0.1s;
+    
+    /* Sombra en el botón para POP */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.button:hover {
+    background-color: var(--color-accent-hover); 
+    transform: translateY(-2px); /* Pequeño efecto de "presión" al pasar el ratón */
+}

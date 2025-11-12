@@ -1,0 +1,110 @@
+/* src/components/Layout/Footer.module.css */
+/* Usamos las variables definidas en src/index.css */
+
+.footer {
+    /* Fondo ligeramente más oscuro que el fondo base para contraste sutil */
+    background-color: #111111; 
+    padding: 3rem 0;
+    color: var(--color-text-secondary); /* Texto más sutil en el footer */
+    border-top: 1px solid rgba(85, 85, 85, 0.3); /* Línea divisoria superior */
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* --- Sección Superior (Logo, Copyright y Redes) --- */
+.topSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinear arriba para el espacio */
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.brandInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logoText {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.copyright {
+    font-size: 0.85rem;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.socialIcon {
+    font-size: 1.5rem;
+    color: var(--color-text-secondary);
+    transition: color 0.2s;
+}
+
+.socialIcon:hover {
+    color: var(--color-accent-primary); /* Acento marrón en redes */
+}
+
+
+/* --- Sección Media (Columnas de Navegación) --- */
+.navColumnsContainer {
+    display: grid;
+    /* 3 columnas para los enlaces */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    margin-bottom: 3rem;
+}
+
+.columnTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+}
+
+.navList {
+    list-style: none; /* Quitar viñetas */
+    padding: 0;
+}
+
+.navList li {
+    margin-bottom: 0.75rem;
+}
+
+.navLink {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.navLink:hover {
+    color: var(--color-text-primary); /* Texto claro al pasar el ratón */
+}
+
+/* --- Sección Inferior (Legal) --- */
+.legalSection {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(85, 85, 85, 0.3);
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.legalLink {
+    margin: 0 1rem;
+    color: var(--color-text-secondary);
+}
+
+.legalLink:hover {
+    color: var(--color-accent-primary);
+}

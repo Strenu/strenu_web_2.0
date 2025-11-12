@@ -1,0 +1,75 @@
+/* src/components/Sections/Features.module.css */
+/* Usamos las variables definidas en src/index.css */
+
+.section {
+    max-width: 1280px;
+    margin: 4rem auto; /* Margen superior e inferior */
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+}
+
+.subheading {
+    font-size: 1.15rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+}
+
+/* --- Cuadrícula de Cards --- */
+.cardGrid {
+    display: grid;
+    /* 3 columnas para un diseño de escritorio moderno */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; /* Espacio entre las tarjetas */
+}
+
+/* --- Estilo de Tarjeta (Card con Elevación) --- */
+.card {
+    background-color: var(--color-surface-dark); /* Gris oscuro */
+    padding: 2rem;
+    border-radius: 12px; /* Bordes redondeados suaves */
+    position: relative;
+    overflow: hidden;
+    height: 100%; /* Asegura que todas las tarjetas sean iguales */
+    text-align: left;
+    
+    /* EFECTO CLAVE: Sombra para la ELEVACIÓN */
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.7), /* Sombra oscura principal (profundidad) */
+        0 0 0 1px rgba(85, 85, 85, 0.2); /* Borde sutil y fino */
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto Hover: Elevar y acentuar ligeramente */
+.card:hover {
+    transform: translateY(-5px); /* Pequeña elevación al pasar el ratón */
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.9), /* Sombra más intensa al subir */
+        0 0 0 2px var(--color-accent-primary); /* Borde de acento (marrón) */
+}
+
+.cardIcon {
+    font-size: 2.5rem;
+    color: var(--color-accent-primary); /* Color de acento para el icono */
+    margin-bottom: 1rem;
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-primary);
+}
+
+.cardDescription {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}

@@ -1,0 +1,50 @@
+/* src/index.css */
+
+/* --- 1. Variables de Color (Custom Properties) --- */
+:root {
+  /* Negros y Grises */
+  --color-background-base: #1A1A1A; /* Negro Base */
+  --color-surface-dark: #333333;   /* Gris Oscuro para Cards/Superficies */
+  --color-border-subtle: #555555;  /* Gris para Bordes y Líneas */
+  
+  --color-accent-primary: #D97706; /* Ámbar STRENU */
+  --color-accent-hover: #F59E0B;
+
+  /* Texto */
+  --color-text-primary: #E0E0E0;   /* Texto principal (Claro) */
+  --color-text-secondary: #B0B0B0; /* Texto secundario/sutil */
+  
+  /* Tipografía */
+  --font-family-base: 'Inter', 'Roboto', 'Arial', sans-serif;
+}
+
+/* --- 2. Reseteo Básico y Estilos del Cuerpo --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Aplicar el fondo oscuro y el color de texto a todo el cuerpo */
+body {
+  background-color: var(--color-background-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  line-height: 1.6; /* Mejora la lectura */
+}
+
+/* Estilos de Enlaces */
+a {
+  color: var(--color-text-secondary); /* Enlaces sutiles */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-accent-primary); /* Acento al pasar el ratón */
+}
+
+/* Asegurar que el contenedor principal ocupe la pantalla */
+#root {
+  min-height: 100vh;
+}

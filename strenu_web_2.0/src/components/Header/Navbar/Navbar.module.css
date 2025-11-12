@@ -1,0 +1,185 @@
+/* src/components/Header/Navbar.module.css */
+/* Asume que las variables de color están en src/index.css */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-background-base); 
+    
+    /* Sombra moderna tipo 'flotante' */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); 
+    /* Borde sutil para definición */
+    border-bottom: 1px solid rgba(85, 85, 85, 0.3);
+    border-top: 1px solid rgba(85, 85, 85, 0.1);
+
+    z-index: 1000;
+    /* AUMENTO DE ALTURA: Más padding vertical (1rem) */
+    padding: 1rem 0; 
+}
+
+/* --- Estructura Principal --- */
+.container {
+    max-width: 1280px; 
+    margin: 0 auto;
+    padding: 0 1.5rem; 
+    
+    /* Distribución Horizontal Flexbox */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* --- 1. IZQUIERDA: Marca y Logo --- */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    text-decoration: none; 
+}
+
+.logoText {
+    font-size: 1.2rem; 
+    font-weight: 700; 
+    color: var(--color-text-primary);
+    letter-spacing: -0.8px;
+    transition: color 0.2s;
+}
+
+.brand:hover .logoText {
+    color: var(--color-accent-primary); 
+}
+
+
+/* --- 2. CENTRO: Enlaces de Navegación --- */
+.navLinks {
+    display: flex;
+    gap: 2.2rem; 
+}
+
+.navLink {
+    color: var(--color-text-secondary); 
+    font-weight: 400; 
+    
+    /* Hover mejorado: Más padding horizontal para una mejor área de clic */
+    padding: 0.3rem 0.6rem; 
+    
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-radius 0.2s;
+    position: relative;
+    border-radius: 4px; 
+}
+
+/* Hover de color y fondo sutil */
+.navLink:hover {
+    color: var(--color-accent-primary);
+    background-color: var(--color-surface-dark); 
+}
+
+/* Efecto de línea sutil de acento al pasar el ratón */
+.navLink::after {
+    content: '';
+    position: absolute;
+    /* Posicionamiento ajustado a la nueva altura/padding */
+    bottom: -15px; 
+    left: 0.6rem; 
+    width: 0; /* Inicialmente oculto */
+    height: 2px;
+    background-color: var(--color-accent-primary);
+    transition: width 0.3s ease-out;
+}
+
+/* El hover muestra la línea con el ancho completo ajustado */
+.navLink:hover::after {
+    width: calc(100% - 1.2rem); /* Ancho del enlace menos el padding lateral */
+}
+
+
+/* --- 3. DERECHA: Cajón de Apps/Acciones --- */
+.actions {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.drawerContainer {
+    position: relative; /* Contenedor relativo para posicionar el dropdown */
+}
+
+.appButton {
+    background: none;
+    border: 1px solid var(--color-border-subtle);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    line-height: 0; 
+    font-size: 0.8rem;
+    border-radius: 6px; 
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.appButton:hover {
+    background-color: var(--color-surface-dark); 
+    border-color: var(--color-accent-primary); 
+}
+
+/* --- Estilos del AppDrawer (Menú flotante) --- */
+.appDrawer {
+    /* Estilos de la tarjeta flotante */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 15px; 
+    background-color: var(--color-surface-dark);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 12px; 
+    padding: 1rem;
+    width: 280px; 
+    /* Sombra profunda para efecto 3D */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05); 
+    z-index: 100;
+}
+
+.drawerTitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(85, 85, 85, 0.3); 
+}
+
+.appGrid {
+    /* Usamos Grid para organizar los iconos de forma elegante */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas para más apps */
+    gap: 10px;
+}
+
+.appItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.appItem:hover {
+    /* Efecto hover suave que imita la elevación sobre el fondo oscuro */
+    background-color: rgba(181, 164, 150, 0.1); /* Marrón/acento muy transparente */
+}
+
+.appIcon {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.appName {
+    font-size: 0.85rem;
+    color: var(--color-text-primary);
+    text-align: center;
+}
