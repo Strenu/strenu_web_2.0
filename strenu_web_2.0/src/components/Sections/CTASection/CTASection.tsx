@@ -9,7 +9,7 @@ const CTASection: React.FC = () => {
                     Comienza Hoy Mismo. Es Simple, Rápido y Gratis.
                 </h2>
                 <p className={styles.subtitle}>
-                    Únete a las miles de empresas que ya están transformando su colaboración con Tu Empresa.
+                    Únete a las miles de empresas que ya están transformando su colaboración con Strenu.
                 </p>
                 <a href="/signup" className={styles.button}>
                     Empezar Prueba Gratuita →

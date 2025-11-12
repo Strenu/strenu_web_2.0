@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
         {/* IZQUIERDA: Logo y Nombre de la Empresa */}
         <a href="/" className={styles.brand}>
           {/*  (Logo) */}
-          <span className={styles.logoText}>Tu Empresa</span>
+          <span className={styles.logoText}>Strenu</span>
         </a>
 
         {/* CENTRO: Apartados Principales */}

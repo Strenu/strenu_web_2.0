@@ -45,9 +45,9 @@ const Footer: React.FC = () => {
         {/* Sección Superior: Logo, Derechos y Redes */}
         <div className={styles.topSection}>
           <div className={styles.brandInfo}>
-            <span className={styles.logoText}>Tu Empresa</span>
+            <span className={styles.logoText}>Strenu</span>
             <p className={styles.copyright}>
-              © {currentYear} Tu Empresa. Todos los derechos reservados.
+              © {currentYear} Strenu. Todos los derechos reservados.
             </p>
           </div>
           
