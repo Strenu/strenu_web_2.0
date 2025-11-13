@@ -1,0 +1,221 @@
+/* src/components/Sections/Testimonials.module.css */
+
+/* --- Variables de index.css (referencia) --- */
+/* --color-surface-dark: #333333; */
+/* --color-accent-primary: #D97706; (Ámbar STRENU) */
+/* ------------------------------------------- */
+
+.container {
+    padding: 6rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.heading {
+    font-family: var(--font-family-title);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+}
+
+.subheading {
+    font-size: 1.15rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ------------------------------------------
+   ESTILOS DE CARRUSEL (Wrapper y Navegación)
+   ------------------------------------------ */
+
+.carouselWrapper {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 4rem; 
+}
+
+.carouselContent {
+    min-height: 250px; /* Evita que la sección salte al cambiar de contenido */
+}
+
+.navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-surface-dark);
+    color: var(--color-accent-primary);
+    border: 1px solid var(--color-accent-primary);
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+    z-index: 10;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navButton:hover {
+    background-color: rgba(217, 119, 6, 0.1); 
+    box-shadow: 0 0 10px rgba(217, 119, 6, 0.5); 
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+/* ------------------------------------------
+   ANIMACIÓN FADE-IN/OUT
+   ------------------------------------------ */
+
+/* Animación de entrada: el testimonio que se muestra */
+.fadeIn {
+    opacity: 1;
+    transition: opacity 0.4s ease-in;
+}
+
+/* Animación de salida: el testimonio que se oculta */
+.fadeOut {
+    opacity: 0;
+    transition: opacity 0.4s ease-out; /* Debe coincidir con el tiempo de espera en TS */
+}
+
+/* --- Indicadores de posición (puntos) --- */
+.indicatorWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.indicator {
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: var(--color-surface-dark);
+    border: 2px solid var(--color-text-secondary);
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.activeIndicator {
+    background-color: var(--color-accent-primary);
+    border-color: var(--color-accent-primary);
+}
+
+/* ------------------------------------------
+   ESTILOS DE LA TARJETA INDIVIDUAL Y LOGO
+   ------------------------------------------ */
+
+.card {
+    background-color: var(--color-surface-dark);
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+    text-align: left;
+    height: auto; 
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    width: 50px; 
+    height: 50px;
+    object-fit: contain;
+    margin-right: 1.5rem;
+    /* Filtrar el logo para integrarlo con el tema oscuro/gris Basalto */
+    filter: grayscale(100%) brightness(1.5); 
+    opacity: 0.8;
+}
+
+.quote {
+    font-size: 1.25rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: var(--color-accent-primary); 
+    border-left: 3px solid var(--color-accent-primary);
+    padding-left: 1rem;
+}
+
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+}
+
+.name {
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.titleCompany {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.company {
+    font-weight: 600;
+    color: var(--color-text-primary); 
+}
+
+/* --- Mensajes de estado --- */
+.loadingMessage, .errorMessage {
+    padding: 2rem;
+    color: var(--color-text-secondary);
+}
+
+/* ------------------------------------------
+   MEDIA QUERIES (Responsividad)
+   ------------------------------------------ */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 4rem 1rem;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+    
+    .carouselWrapper {
+        padding: 0 1rem; 
+    }
+    
+    .navButton {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+    .left {
+        left: 0;
+    }
+    .right {
+        right: 0;
+    }
+
+    .quote {
+        font-size: 1.1rem;
+    }
+}

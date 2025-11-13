@@ -3,7 +3,8 @@ import Footer from "./components/Layout/Footer/Footer";
 import CTASection from "./components/Sections/CTASection/CTASection";
 import FeaturesSection from "./components/Sections/FeatureSection/FeatureSection";
 import HeroSection from "./components/Sections/HeroSection/HeroSection";
-import PricingSection from "./components/Sections/PriceCard/PricingSection";
+import PricingSection from "./components/Sections/PriceCardSection/PricingSection";
+import Testimonials from "./components/Sections/TestimonialsSection/Testimonials";
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
       <main>
         <HeroSection /> 
         <FeaturesSection /> 
-        <PricingSection /> 
+        <PricingSection />
+        <Testimonials/> 
         <CTASection />
       </main>
       
